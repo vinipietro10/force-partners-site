@@ -1,0 +1,32 @@
+# Force Partners — forcepartners.com.br
+# Crawlers de busca e de IA liberados: citação em ChatGPT, Perplexity,
+# Gemini e AI Overviews é canal de aquisição, não risco.
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://forcepartners.com.br/sitemap.xml
