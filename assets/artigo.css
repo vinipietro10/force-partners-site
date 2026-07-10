@@ -28,7 +28,7 @@
 .breadcrumb a:hover { text-decoration: underline; }
 .breadcrumb span[aria-hidden] { opacity: .5; }
 
-.apage__title { font-weight: 800; letter-spacing: -0.025em; line-height: 1.06; font-size: clamp(32px,5.4vw,54px); }
+.apage__title { font-weight: 800; letter-spacing: -0.025em; line-height: 1.08; font-size: clamp(26px,4.4vw,44px); }
 .apage__meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; font-size: 14px; color: var(--mut); align-items: center; }
 .apage__meta strong { color: var(--ink); font-weight: 700; }
 .apage__meta .sep { color: var(--gold); }
@@ -41,8 +41,8 @@
 
 /* Prosa */
 .prose { margin-top: 20px; }
-.prose h2 { font-size: clamp(24px,3vw,32px); font-weight: 800; letter-spacing: -0.015em; line-height: 1.15; margin: 52px 0 4px; }
-.prose h3 { font-size: clamp(19px,2.2vw,23px); font-weight: 700; margin: 36px 0 0; }
+.prose h2 { font-size: clamp(22px,2.8vw,29px); font-weight: 800; letter-spacing: -0.015em; line-height: 1.15; margin: 52px 0 4px; }
+.prose h3 { font-size: clamp(18px,2vw,21px); font-weight: 700; margin: 36px 0 0; }
 .prose p { margin-top: 18px; color: #333a4e; font-size: 17px; }
 .prose ul, .prose ol { margin: 18px 0 0 22px; color: #333a4e; display: flex; flex-direction: column; gap: 10px; }
 .prose a { color: var(--gold-deep); font-weight: 600; border-bottom: 1px solid rgba(166,126,69,0.35); }
