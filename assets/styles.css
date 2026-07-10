@@ -189,6 +189,15 @@ html.anim [data-reveal], html.anim [data-hero] { opacity: 0; }
 }
 @media (max-width: 600px) { body { font-size: 16px; } .stats__grid { grid-template-columns: 1fr; } .hero__cta .origin { width: 100%; justify-content: center; } }
 
+/* Footer cinematic: fluxo natural no mobile (evita sobreposição) */
+@media (max-width: 700px) {
+  .cfoot { height: auto; clip-path: none; }
+  .cfoot__inner { position: relative; height: auto; gap: 36px; }
+  .cfoot__marquee { position: relative; top: 0; transform: none; }
+  .cfoot__center { padding: 8px 20px 0; }
+  .cfoot__giant { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   html:not(.lenis) { scroll-behavior: auto; }
