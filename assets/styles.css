@@ -81,7 +81,7 @@ a { color: inherit; text-decoration: none; }
 .hero__type { display: block; color: var(--gold); min-height: 1.05em; }
 .tw-cur { display: inline-block; width: 4px; height: 0.8em; background: var(--gold); margin-left: 8px; vertical-align: -0.05em; animation: blink 1s steps(2) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-.hero__lead { font-size: clamp(16px,1.8vw,19px); color: var(--mut); max-width: 56ch; margin: 36px 0 64px; }
+.hero__lead { font-size: clamp(16px,1.8vw,19px); color: var(--mut); max-width: 56ch; margin: 36px 0 96px; }
 .hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
 .hero__proof { margin-top: 42px; font-size: 15px; font-weight: 600; }
 
@@ -195,6 +195,7 @@ html.anim [data-reveal], html.anim [data-hero] { opacity: 0; }
   .lead-reveal-wrap { height: 155vh; }
   .lead-reveal-wrap .hero__lead { position: sticky; top: 96px; margin: 26px 0 0; font-size: 19px; font-weight: 600; line-height: 1.55; color: var(--ink); max-width: none; }
   .lead-reveal-wrap .rw { opacity: var(--wop, 0.22); }
+  .lead-reveal-wrap + .hero__cta { margin-top: 72px; }
 }
 
 /* Footer cinematic: fluxo natural no mobile (evita sobreposição) */
