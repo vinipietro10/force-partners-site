@@ -93,26 +93,24 @@ if (reduce) {
 }
 
 
-/* Lead reveal palavra a palavra no scroll (mobile) */
-const lead = document.querySelector('.hero__lead');
-if (lead && !reduce && window.matchMedia('(max-width: 700px)').matches) {
-  const wrap = document.createElement('div');
-  wrap.className = 'lead-reveal-wrap';
-  lead.parentNode.insertBefore(wrap, lead);
-  wrap.appendChild(lead);
-  lead.innerHTML = lead.textContent.trim().split(/\s+/).map((w) => '<span class="rw">' + w + '</span>').join(' ');
-  const ws = Array.from(lead.querySelectorAll('.rw'));
-  const N = ws.length;
-  function updReveal() {
-    const r = wrap.getBoundingClientRect();
-    const total = Math.max(r.height - window.innerHeight, 1);
-    const p = Math.min(1, Math.max(0, -r.top / total));
-    ws.forEach((s, i) => {
-      const o = Math.min(1, Math.max(0, (p - i / N) * N));
-      s.style.setProperty('--wop', (0.22 + 0.78 * o).toFixed(3));
+/* Contador de números das estatísticas (mobile) */
+if (!reduce && window.matchMedia('(max-width: 700px)').matches) {
+  const nums = document.querySelectorAll('.stat__n span:not(.pre):not(.suf)');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      io.unobserve(el);
+      const target = parseInt(el.textContent, 10);
+      if (isNaN(target)) return;
+      const dur = 1400, t0 = performance.now();
+      (function tick(t) {
+        const p = Math.min(1, (t - t0) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased);
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
     });
-  }
-  updReveal();
-  window.addEventListener('scroll', () => requestAnimationFrame(updReveal), { passive: true });
-  window.addEventListener('resize', updReveal, { passive: true });
+  }, { threshold: 0.6 });
+  nums.forEach((n) => io.observe(n));
 }

@@ -189,14 +189,10 @@ html.anim [data-reveal], html.anim [data-hero] { opacity: 0; }
 }
 @media (max-width: 600px) { body { font-size: 16px; } .stats__grid { grid-template-columns: 1fr; } .hero__cta .origin { width: 100%; justify-content: center; } }
 
-/* Lead reveal no mobile (palavra a palavra) */
-.rw { opacity: 1; transition: opacity .12s linear; }
-@media (max-width: 700px) {
-  .lead-reveal-wrap { height: 155vh; }
-  .lead-reveal-wrap .hero__lead { position: sticky; top: 96px; margin: 26px 0 0; font-size: 19px; font-weight: 600; line-height: 1.55; color: var(--ink); max-width: none; }
-  .lead-reveal-wrap .rw { opacity: var(--wop, 0.22); }
-  .lead-reveal-wrap + .hero__cta { margin-top: 72px; }
-}
+/* CTA do hero em dourado Force */
+.hero__cta .origin--lg { border-color: var(--gold); background: var(--gold); color: var(--navy); }
+.hero__cta .origin--lg::before { background: var(--gold-deep); }
+.hero__cta .origin--lg:hover { color: var(--navy); }
 
 /* Footer cinematic: fluxo natural no mobile (evita sobreposição) */
 @media (max-width: 700px) {
