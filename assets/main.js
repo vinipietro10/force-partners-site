@@ -144,3 +144,17 @@ if (cardsEl && window.matchMedia('(max-width: 700px)').matches) {
     });
   }, { passive: true });
 }
+
+/* Parallax dos retratos (quem somos) */
+const spxImgs = document.querySelectorAll('.socio-panel__media img');
+if (spxImgs.length && !reduce) {
+  const updSpx = () => {
+    spxImgs.forEach((img) => {
+      const r = img.parentElement.getBoundingClientRect();
+      if (r.bottom < -60 || r.top > window.innerHeight + 60) return;
+      const p = Math.max(-1, Math.min(1, (r.top + r.height / 2 - window.innerHeight / 2) / ((window.innerHeight + r.height) / 2)));
+      img.style.transform = 'translateY(' + (-9 - p * 8).toFixed(2) + '%)';
+    });
+  };
+  (function loopSpx() { updSpx(); requestAnimationFrame(loopSpx); })();
+}

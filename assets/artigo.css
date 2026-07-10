@@ -123,3 +123,22 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 
 @media (max-width: 760px) {
   .related__grid, .hub__grid { grid-template-columns: 1fr; }
 }
+
+/* Quem somos: painéis de sócios com parallax */
+.team { margin-top: clamp(48px,7vw,88px); display: flex; flex-direction: column; gap: clamp(64px,9vw,120px); }
+.socio-panel { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px,5vw,72px); align-items: center; }
+.socio-panel:nth-child(even) .socio-panel__media { order: 2; }
+.socio-panel__media { border-radius: 20px; overflow: hidden; aspect-ratio: 4/5; max-height: 74vh; background: var(--navy-deep); }
+.socio-panel__media img { width: 100%; height: 122%; object-fit: cover; transform: translateY(-9%); will-change: transform; }
+.socio-panel__n { display: block; font-size: 14px; font-weight: 800; color: var(--gold-deep); letter-spacing: 0.08em; margin-bottom: 12px; }
+.socio-panel__name { font-size: clamp(26px,3.4vw,40px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
+.socio-panel .partner__role { margin-top: 8px; }
+.socio-panel .partner__bio { max-width: 44ch; }
+@media (max-width: 900px) {
+  .socio-panel { grid-template-columns: 1fr; gap: 20px; }
+  .socio-panel:nth-child(even) .socio-panel__media { order: 0; }
+  .socio-panel__media { max-height: 58vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .socio-panel__media img { transform: translateY(-9%) !important; }
+}
