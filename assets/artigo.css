@@ -165,3 +165,6 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 
 .bi-close .origin--lg::before { background: var(--gold-2); }
 .bi-close .origin--lg:hover { color: var(--navy); }
 @media (max-width: 860px) { .bi-grid { grid-template-columns: 1fr; } }
+
+/* Acta dentro de seção navy */
+.arts .acta { border: 1px solid var(--hair); background: rgba(244,242,236,0.05); }
