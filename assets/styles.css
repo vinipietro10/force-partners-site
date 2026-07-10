@@ -127,6 +127,7 @@ a { color: inherit; text-decoration: none; }
 .partner__name { font-size: 21px; font-weight: 800; }
 .partner__role { color: var(--ink); font-weight: 600; font-size: 15px; margin-top: 5px; }
 .partner__spec { color: var(--gold-deep); font-size: 13px; font-weight: 600; margin-top: 2px; }
+.partner__bio { color: var(--mut); font-size: 14px; line-height: 1.6; margin-top: 10px; }
 
 /* grayscale → cor no hover */
 .gc img { filter: grayscale(1) contrast(1.02); transition: filter .6s var(--ease), transform .6s var(--ease); }
@@ -199,7 +200,8 @@ html.anim [data-reveal], html.anim [data-hero] { opacity: 0; }
   .partner-grid { max-width: none; gap: 0; margin-top: 36px; }
   .partner { display: grid; grid-template-columns: 76px 1fr; grid-template-rows: auto auto auto; column-gap: 16px; align-items: center; padding: 14px 0; border-top: 1px solid var(--line); }
   .partner:last-child { border-bottom: 1px solid var(--line); }
-  .partner__photo { grid-row: 1 / 4; aspect-ratio: 4/5; margin-bottom: 0; border-radius: 10px; }
+  .partner__photo { grid-row: 1 / span 4; aspect-ratio: 4/5; margin-bottom: 0; border-radius: 10px; align-self: start; }
+  .partner__bio { grid-column: 2; font-size: 13px; margin-top: 6px; }
   .partner__name { font-size: 17px; align-self: end; }
   .partner__role { margin-top: 2px; font-size: 13px; }
   .partner__spec { margin-top: 1px; font-size: 12px; align-self: start; }
