@@ -196,6 +196,7 @@ html.anim [data-reveal], html.anim [data-hero] { opacity: 0; }
   .cfoot__marquee { position: relative; top: 0; transform: none; }
   .cfoot__center { padding: 8px 20px 0; }
   .cfoot__giant { display: none; }
+  .cfoot__bar { padding-top: 18px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
