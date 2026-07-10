@@ -194,6 +194,20 @@ html.anim [data-reveal], html.anim [data-hero] { opacity: 0; }
 .hero__cta .origin--lg::before { background: var(--gold-deep); }
 .hero__cta .origin--lg:hover { color: var(--navy); }
 
+/* Serviços em carrossel com swipe (mobile) */
+@media (max-width: 700px) {
+  .proc__media { height: 200px; min-height: 0; }
+  .proc__cards { display: flex; flex-direction: row; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin-inline: -20px; padding: 4px 20px 8px; scroll-padding-left: 20px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .proc__cards::-webkit-scrollbar { display: none; }
+  .proc__cards .pcard { flex: 0 0 82%; display: block; scroll-snap-align: start; }
+  .proc__cards .pcard__n { display: block; margin-bottom: 10px; }
+  .proc__cards .pcard:hover { transform: none; }
+  .proc__prog { display: flex; align-items: center; gap: 6px; margin-top: 18px; }
+  .proc__prog .seg { height: 3px; width: 10px; border-radius: 2px; background: rgba(244,242,236,0.22); transition: width .3s var(--ease), background .3s var(--ease); cursor: pointer; }
+  .proc__prog .seg.on { width: 22px; background: var(--gold); }
+  .proc__hint { margin-left: auto; font-size: 12px; color: var(--on-dark-mut); transition: opacity .4s var(--ease); }
+}
+
 /* Footer cinematic: fluxo natural no mobile (evita sobreposição) */
 @media (max-width: 700px) {
   .cfoot { height: auto; clip-path: none; }

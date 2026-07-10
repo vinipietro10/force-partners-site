@@ -114,3 +114,33 @@ if (!reduce && window.matchMedia('(max-width: 700px)').matches) {
   }, { threshold: 0.6 });
   nums.forEach((n) => io.observe(n));
 }
+
+/* Carrossel de serviços: progresso e hint (mobile) */
+const cardsEl = document.querySelector('.proc__cards');
+if (cardsEl && window.matchMedia('(max-width: 700px)').matches) {
+  const cards = Array.from(cardsEl.querySelectorAll('.pcard'));
+  cards.forEach((c) => c.removeAttribute('data-reveal'));
+  const prog = document.createElement('div');
+  prog.className = 'proc__prog';
+  const GAP = 14;
+  cards.forEach((c, i) => {
+    const b = document.createElement('span');
+    b.className = 'seg' + (i === 0 ? ' on' : '');
+    b.addEventListener('click', () => cardsEl.scrollTo({ left: i * (cards[0].offsetWidth + GAP), behavior: 'smooth' }));
+    prog.appendChild(b);
+  });
+  const hint = document.createElement('span');
+  hint.className = 'proc__hint';
+  hint.textContent = 'deslize \u2192';
+  prog.appendChild(hint);
+  cardsEl.parentNode.insertBefore(prog, cardsEl.nextSibling);
+  let hinted = false;
+  cardsEl.addEventListener('scroll', () => {
+    requestAnimationFrame(() => {
+      const w = cards[0].offsetWidth + GAP;
+      const idx = Math.min(cards.length - 1, Math.max(0, Math.round(cardsEl.scrollLeft / w)));
+      prog.querySelectorAll('.seg').forEach((s, i) => s.classList.toggle('on', i === idx));
+      if (!hinted && cardsEl.scrollLeft > 40) { hinted = true; hint.style.opacity = '0'; }
+    });
+  }, { passive: true });
+}
