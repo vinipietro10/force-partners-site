@@ -194,6 +194,18 @@ html.anim [data-reveal], html.anim [data-hero] { opacity: 0; }
 .hero__cta .origin--lg::before { background: var(--gold-deep); }
 .hero__cta .origin--lg:hover { color: var(--navy); }
 
+/* Sócios em lista executiva (mobile) */
+@media (max-width: 700px) {
+  .partner-grid { max-width: none; gap: 0; margin-top: 36px; }
+  .partner { display: grid; grid-template-columns: 76px 1fr; grid-template-rows: auto auto auto; column-gap: 16px; align-items: center; padding: 14px 0; border-top: 1px solid var(--line); }
+  .partner:last-child { border-bottom: 1px solid var(--line); }
+  .partner__photo { grid-row: 1 / 4; aspect-ratio: 4/5; margin-bottom: 0; border-radius: 10px; }
+  .partner__name { font-size: 17px; align-self: end; }
+  .partner__role { margin-top: 2px; font-size: 13px; }
+  .partner__spec { margin-top: 1px; font-size: 12px; align-self: start; }
+  .partners .section-sub { margin-top: 28px; }
+}
+
 /* Serviços em carrossel com swipe (mobile) */
 @media (max-width: 700px) {
   .proc__media { height: 200px; min-height: 0; }
