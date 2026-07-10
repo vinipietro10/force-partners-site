@@ -168,3 +168,7 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 
 
 /* Acta dentro de seção navy */
 .arts .acta { border: 1px solid var(--hair); background: rgba(244,242,236,0.05); }
+
+/* Botão de LinkedIn dos sócios */
+.socio-panel__ln { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 10px 18px; border: 1.5px solid var(--gold-deep); border-radius: 100px; color: var(--gold-deep); font-weight: 700; font-size: 14px; transition: background .3s var(--ease), color .3s var(--ease); }
+.socio-panel__ln:hover { background: var(--gold-deep); color: var(--cream); }
