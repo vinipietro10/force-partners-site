@@ -142,3 +142,26 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 
 @media (prefers-reduced-motion: reduce) {
   .socio-panel__media img { transform: translateY(-9%) !important; }
 }
+
+/* Página BI da Force */
+.bi { background: var(--navy); color: var(--on-dark); padding-block: clamp(64px,8vw,110px); }
+.bi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(18px,2.5vw,28px); }
+.bicard { background: rgba(244,242,236,0.04); border: 1px solid var(--hair); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .3s var(--ease), transform .3s var(--ease); }
+.bicard:hover { border-color: rgba(188,150,91,0.5); transform: translateY(-3px); }
+.bicard__media { aspect-ratio: 3/2; overflow: hidden; }
+.bicard__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.bicard:hover .bicard__media img { transform: scale(1.04); }
+.bicard__body { padding: clamp(20px,2.4vw,28px); display: flex; flex-direction: column; gap: 10px; flex: 1; align-items: flex-start; }
+.bicard__n { font-size: 13px; font-weight: 800; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+.bicard h2 { font-size: clamp(19px,2.2vw,24px); font-weight: 700; letter-spacing: -0.01em; color: var(--on-dark); }
+.bicard p { color: var(--on-dark-mut); font-size: 16px; flex: 1; }
+.bicard .origin { border-color: var(--gold); background: var(--gold); color: var(--navy); margin-top: 6px; }
+.bicard .origin::before { background: var(--gold-2); }
+.bicard .origin:hover { color: var(--navy); }
+.bi-close { text-align: center; max-width: 720px; margin: clamp(56px,7vw,88px) auto 0; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.bi-close p { color: var(--on-dark-mut); font-size: 17px; }
+.bi-close__sub { font-size: 14px !important; color: var(--gold-2) !important; }
+.bi-close .origin--lg { border-color: var(--gold); background: var(--gold); color: var(--navy); }
+.bi-close .origin--lg::before { background: var(--gold-2); }
+.bi-close .origin--lg:hover { color: var(--navy); }
+@media (max-width: 860px) { .bi-grid { grid-template-columns: 1fr; } }
