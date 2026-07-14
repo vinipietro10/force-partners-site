@@ -77,6 +77,13 @@ a { color: inherit; text-decoration: none; }
 .mobile-menu nav { display: flex; flex-direction: column; gap: 22px; text-align: center; }
 .mobile-menu a { font-size: 22px; font-weight: 700; }
 
+
+/* Wordmark oficial (imagem) no lugar do texto digitado */
+.wordmark { height: 30px; width: auto; display: block; flex: none; }
+.wordmark--dark { display: none; }
+.nav.scrolled .wordmark--light { display: none; }
+.nav.scrolled .wordmark--dark { display: block; }
+
 /* ===== HERO (v3) ===== */
 .hero { max-width: var(--maxw); margin-inline: auto; padding: clamp(140px,18vh,200px) clamp(20px,5vw,56px) clamp(56px,8vw,100px); }
 .hero .eyebrow { font-size: 14px; letter-spacing: 0.04em; text-transform: none; color: var(--gold-deep); margin-bottom: 26px; }
